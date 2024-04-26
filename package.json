@@ -1,0 +1,30 @@
+{
+  "name": "learn-react",
+  "version": "1.0.0",
+  "description": "Namaste React Course",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramdhanishivam/namaste-react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Shivam Ramdhani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramdhanishivam/namaste-react/issues"
+  },
+  "homepage": "https://github.com/ramdhanishivam/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.2"
+  },
+  "dependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "browserList": "last 2 versions"
+}
