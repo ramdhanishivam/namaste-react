@@ -1,0 +1,108 @@
+/* Header Component */
+.header-component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+/* Logo Component */
+.logo-component img {
+    width: 100px;
+    height: auto;
+}
+
+/* Navigation Component */
+.navigation-component ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+/* Body Component */
+.body-component {
+    padding: 20px;
+}
+
+/* Search Component */
+.search-component input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-component button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* RestaurantContainer Component */
+.restaurant-container-component {
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* RestaurantCard Component */
+.restaurant-card-component {
+    padding: 40px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    text-align: center;
+    height: 200px;
+    width: 150px;
+}
+
+.restaurant-card-component img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.restaurant-card-component h2 {
+    margin-top: 10px;
+}
+
+.restaurant-card-component p {
+    margin-top: 5px;
+}
+
+.restaurant-card-component button {
+    margin-top: 5px;
+    padding: 5px 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer Component */
+.footer-component {
+    margin-top: 10%;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+/* SocialMediaLinks Component */
+.social-media-links-component ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+/* ContactUs Component */
+.contact-us-component h2 {
+    margin-bottom: 10px;
+}
+
+/* AboutUs Component */
+.about-us-component h2 {
+    margin-bottom: 10px;
+}
