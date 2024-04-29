@@ -1,13 +1,15 @@
+
+
 import React from "react";
-import { restaurantDataFromSwiggy } from "./utils/restaurantDataFromSwiggy";
 import { RestaurantCard } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 
 // RestaurantContainer component
+
 export const RestaurantContainer = () => {
     const [restaurantData, setRestaurantData] = useState([]);
+    
     useEffect(() => {
-        console.log("RestaurantContainer component mounted");
         fetchSwiggyData();
     }, []);
 
@@ -20,39 +22,43 @@ export const RestaurantContainer = () => {
             console.error("Error fetching data from Swiggy API", error);
         }
     };
-    
-    // Shimmer effect
+
+    // Shimmer effect - Conditional Rendering
     if (restaurantData.length === 0) {
         return (
-            <>
-                <div className="shimmer-container">
-                    <div className="shimmer-wrapper"></div>
-                    <div className="shimmer-wrapper"></div>
-                    <div className="shimmer-wrapper"></div>
-                    <div className="shimmer-wrapper"></div>
-                    <div className="shimmer-wrapper"></div>
-                    <div className="shimmer-wrapper"></div>
-                    <div className="shimmer-wrapper"></div>
-                    <div className="shimmer-wrapper"></div>
-                    <div className="shimmer-wrapper"></div>
-                    <div className="shimmer-wrapper"></div>
-                </div>
-            </>
+            ShimmerCard()
         );
     }
 
     return (
         <>
-        <button onClick={() => {
-            console.log("Top Rated Restaurants clicked");
-            const filteredData = restaurantData.filter((restaurant) => restaurant.info.avgRating >= 4.3);
-            setRestaurantData(filteredData);
-        }} >Top Rated Restaurants</button>
-        <div className="restaurant-container-component">
-            {restaurantData.map((restaurant) => (
-                <RestaurantCard key={restaurant.info.id} restaurant={restaurant} />
-            ))}
-        </div>
+            <button onClick={() => {
+                const filteredData = restaurantData.filter((restaurant) => restaurant.info.avgRating >= 4.3);
+                setRestaurantData(filteredData);
+            }}>Top Rated Restaurants</button>
+            <div className="restaurant-container-component">
+                {restaurantData.map((restaurant) => (
+                    <RestaurantCard key={restaurant.info.id} restaurant={restaurant} />
+                ))}
+            </div>
         </>
     );
 };
+
+function ShimmerCard() {
+    return <>
+        <div className="shimmer-container">
+            <div className="shimmer-wrapper"></div>
+            <div className="shimmer-wrapper"></div>
+            <div className="shimmer-wrapper"></div>
+            <div className="shimmer-wrapper"></div>
+            <div className="shimmer-wrapper"></div>
+            <div className="shimmer-wrapper"></div>
+            <div className="shimmer-wrapper"></div>
+            <div className="shimmer-wrapper"></div>
+            <div className="shimmer-wrapper"></div>
+            <div className="shimmer-wrapper"></div>
+        </div>
+    </>;
+}
+
