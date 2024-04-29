@@ -42,7 +42,7 @@
 }
 
 /* RestaurantContainer Component */
-.restaurant-container-component {
+.restaurant-container-component, .shimmer-container {
     margin-top: 5%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -50,12 +50,24 @@
 }
 
 /* RestaurantCard Component */
-.restaurant-card-component {
+.restaurant-card-component, .shimmer-wrapper {
     padding: 40px;
     background-color: #f2f2f2;
     border-radius: 5px;
     text-align: center;
     width: 150px;
+}
+
+/* Shimmer-conainer */
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Shimmer wrapper */
+.shimmer-wrapper {
+    height: 200px;
 }
 
 .restaurant-card-component img {
