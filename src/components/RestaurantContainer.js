@@ -25,9 +25,18 @@ export const RestaurantContainer = () => {
     };
 
     // Shimmer effect - Conditional Rendering
-    if (restaurantData.length === 0) {
+    if (filteredData && filteredData.length === 0) {
         return (
             ShimmerCard()
+        );
+    } 
+
+    // filtererdData is undefined
+    if (!filteredData) {
+        return (
+            <div className="restaurant-container-component">
+                <h3>No restaurants found</h3>
+            </div>
         );
     }
 
@@ -48,7 +57,7 @@ export const RestaurantContainer = () => {
                 setFilteredData(filteredData);
             }}>Top Rated Restaurants</button>
             <div className="restaurant-container-component">
-                {filteredData.map((restaurant) => (
+                {filteredData && filteredData.map((restaurant) => (
                     <RestaurantCard key={restaurant.info.id} restaurant={restaurant} />
                 ))}
             </div>
