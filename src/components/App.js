@@ -7,6 +7,7 @@ import { Footer } from "./Footer";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { AboutUs } from "./AboutUs";
 import { ContactUs } from "./ContactUs";
+import ErrorPage from "./ErrorPage";
 
 export const styleHeader = {
     backgroundColor: "lightblue",
@@ -27,6 +28,7 @@ const appRouter = createBrowserRouter([
     {
         path: "/",
         element: <App />,
+        errorElement: <ErrorPage />,
     },
     {
         path: "/about",
