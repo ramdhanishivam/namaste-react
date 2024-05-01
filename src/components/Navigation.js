@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Navigation Component
 
@@ -8,15 +9,18 @@ export const Navigation = () => {
     const [loginButton, setloginButton] = useState("Login");
     // Every time the state changes, the component re-renders.
 
-
-
     return (
         <div className="navigation-component">
-            {/* Unorderd List */}
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/contact">Contact</Link>
+                </li>
                 <li>
                     <button 
                     onClick={ () => {
