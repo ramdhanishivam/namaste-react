@@ -4,7 +4,7 @@ import "./css/App.css";
 import { Header } from "./Header";
 import { Body } from "./Body";
 import { Footer } from "./Footer";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import { AboutUs } from "./AboutUs";
 import { ContactUs } from "./ContactUs";
 import ErrorPage from "./ErrorPage";
@@ -18,7 +18,7 @@ const App = () => {
     return (
         <div className="app-component">
             <Header />
-            <Body />
+            <Outlet />
             <Footer />
         </div>
     )
@@ -29,15 +29,21 @@ const appRouter = createBrowserRouter([
         path: "/",
         element: <App />,
         errorElement: <ErrorPage />,
+        children: [
+            {
+                path: "/",
+                element: <Body />,
+            },
+            {
+                path: "/about",
+                element: <AboutUs />,
+            },
+            {
+                path: "/contact",
+                element: <ContactUs />,
+            }
+        ]
     },
-    {
-        path: "/about",
-        element: <AboutUs />,
-    },
-    {
-        path: "/contact",
-        element: <ContactUs />,
-    }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
